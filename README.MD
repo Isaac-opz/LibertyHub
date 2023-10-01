@@ -20,6 +20,7 @@ Breve introducción al proyecto y su propósito. Explica de qué se trata el pro
 - Danna Salamanca
 - Juan Pablo Granados
 - Juliana Serrano
+- Isaac Piedrahita
 
 ## Requisitos
 
