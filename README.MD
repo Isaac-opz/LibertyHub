@@ -2,7 +2,7 @@
 
 ## LibertyHub
 
-Proyecto Redes e Infraestructura - Primera parte
+`Proyecto Redes e Infraestructura - Primera parte`
 ## Tabla de Contenidos
 
 1. [Introducción](#introducción)
@@ -12,7 +12,18 @@ Proyecto Redes e Infraestructura - Primera parte
 
 ## Introducción
 
-Breve introducción al proyecto y su propósito. Explica de qué se trata el proyecto y por qué es importante.
+Plataforma de Reseñas de Airbnbs en Nueva York
+
+La Plataforma busca brindar a los usuarios la oportunidad de buscar y evaluar propiedades de Airbnbs junto a su confiabilidad en la vibrante ciudad de Nueva York. Nuestra plataforma tiene como objetivo principal facilitar la toma de decisiones a la hora de elegir un alojamiento, al proporcionar acceso a información detallada y reseñas honestas de otros usuarios.
+
+Este proyecto consta de varios microservicios, cada uno con un propósito específico y complementario. A continuación, presentamos una breve descripción de los principales microservicios que formarán parte de nuestra plataforma:
+
+#### Microservicios presentes:
+**Listado de Propiedades:** Este microservicio se encargaría de gestionar la información relacionada con las propiedades de AirBnB en Nueva York. Los usuarios podrían buscar, ver detalles y reservar propiedades a través de este servicio.
+
+**Reseñas:** Este microservicio permitirá a los usuarios dejar reseñas y calificaciones para las propiedades en las que se han alojado. También puede incluir la funcionalidad para que los usuarios vean reseñas anteriores y calificaciones.
+
+**Autenticación y Gestión de Usuarios:** Este microservicio se encarga de la autenticación de usuarios y la gestión de perfiles de usuario en la plataforma de reseñas de Airbnbs en Nueva York. Su función principal es garantizar la identidad de los usuarios.
 
 ## Participantes
 
