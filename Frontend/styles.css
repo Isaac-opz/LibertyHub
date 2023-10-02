@@ -68,3 +68,46 @@ footer {
     text-align: center;
     padding: 100px 0;
 }
+
+/* Estilos para las tarjetas de propiedades destacadas */
+.featured-properties {
+    margin-top: 20px;
+}
+
+.property-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.property-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.property-card h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.property-card p {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.property-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.property-card a:hover {
+    background-color: #0056b3;
+}
