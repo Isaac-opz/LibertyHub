@@ -1,3 +1,11 @@
+
+<p align="left"> 
+     <img alt="colaborators" title="colaborators" src="https://img.shields.io/github/contributors/Isaac-opz/LibertyHub?style=plastic&logo=GitHub&labelColor=black&color=blue
+"    
+    />
+    <img alt="languages" title="languages" src="https://img.shields.io/github/languages/count/Isaac-opz/LibertyHub?style=plastic&logo=JavaScript&logoColor=blue&labelColor=black"
+    </p>
+
 # Documentación del Proyecto
 
 ## LibertyHub
@@ -48,4 +56,8 @@ npm install mi-proyecto
 
 Página actual: 
 
+`index.html`
 ![Captura de pantalla](README.md-data/capturaweb.png) 
+
+`explore.html (misma plantilla para las demás secciones)`
+![Captura de pantalla](README.md-data/explorehtml.png) 
