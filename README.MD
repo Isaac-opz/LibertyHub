@@ -44,3 +44,8 @@ Instrucciones detalladas sobre cómo instalar y configurar el proyecto en un ent
 ```bash
 # Template Comando Bash
 npm install mi-proyecto
+```
+
+Página actual: 
+
+![Captura de pantalla](README.md-data/capturaweb.png) 
