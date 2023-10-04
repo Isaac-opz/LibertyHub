@@ -1,151 +1,151 @@
-/* Estilos para el encabezado */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #FFE7CE;
+    color: #000;
+    line-height: 1.6;
+}
+
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
+    background-color: #FF8551;
+    color: #000;
     text-align: center;
+    padding: 50px 0;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Estilos para la sección del héroe */
+nav ul li a:hover {
+    color: #fff;
+    background-color: #FF5722;
+}
+
 .hero {
     background-image: url('hero-image.jpg');
     background-size: cover;
     background-position: center;
     text-align: center;
-    padding: 100px 0;
-    color: #fff;
+    padding: 150px 0;
+    color: #000;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 133, 81, 0.5);
+    z-index: 0;
+}
+
+.hero h2, .hero p, .hero a {
+    position: relative;
+    z-index: 1;
 }
 
 .hero h2 {
-    font-size: 36px;
+    font-size: 48px;
     margin-bottom: 20px;
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero a {
-    display: inline-block;
-    padding: 10px 20px;
+    padding: 15px 30px;
     background-color: #ff5722;
-    color: #fff;
+    color: #000;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 50px;
     font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
 }
 
-/* Estilos para la sección de propiedades destacadas */
+.hero a:hover {
+    background-color: #FF8551;
+}
+
 .featured-properties {
-    padding: 40px;
+    padding: 60px 0;
+    text-align: center;
 }
 
 .featured-properties h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-/* Estilos para el pie de página */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 100px 0;
-}
-
-/* Estilos para las tarjetas de propiedades destacadas */
-.featured-properties {
-    margin-top: 20px;
+    font-size: 32px;
+    margin-bottom: 40px;
 }
 
 .property-card {
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    border: 1px solid #FFE7CE;
+    padding: 30px;
+    margin: 20px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s;
 }
 
-.property-card img {
-    max-width: 100%;
-    height: auto;
+.property-card:hover {
+    transform: translateY(-10px);
 }
 
 .property-card h3 {
-    margin-top: 10px;
-    font-size: 1.5rem;
+    margin-top: 20px;
+    font-size: 24px;
 }
 
 .property-card p {
-    margin-top: 10px;
-    font-size: 1rem;
+    margin-top: 20px;
+    font-size: 16px;
 }
 
 .property-card a {
     display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #ff5722;
+    color: #000;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
 .property-card a:hover {
-    background-color: #0056b3;
+    background-color: #FF8551;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f2f2f8; /* Cambiar el color de fondo a azul claro */
-    color: #003366; /* Cambiar el color del texto a azul oscuro */
-}
-
-/* Estilos para la sección del héroe */
-.hero {
-    background-image: url('hero-image.jpg');
-    background-size: cover;
-    background-position: center;
+footer {
+    background-color: #FF8551;
+    color: #000;
     text-align: center;
-    padding: 100px 0;
-    color: #fff; /* Color de texto para todo el contenido en la sección del héroe */
-}
-
-.hero h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #003366; /* Cambiar el color del título a azul oscuro */
-}
-
-.hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #003366; /* Cambiar el color del párrafo a azul oscuro */
-}
-
-.hero a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ff5722;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
+    padding: 50px 0;
 }
