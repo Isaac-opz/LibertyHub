@@ -10,8 +10,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 // Rutas
-app.post('/login', UserController.login);
-app.get('/profile/:id', UserController.getProfile);
+app.post("/register", UserController.register);
 
 // Iniciar el servidor
 app.listen(PORT, () => {

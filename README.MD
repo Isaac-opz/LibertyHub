@@ -58,5 +58,8 @@ Página actual:
 `index.html`
 ![Captura de pantalla](README.md-data/capturaweb.png) 
 
-`explore.html (misma plantilla para las demás secciones)`
-![Captura de pantalla](README.md-data/explorehtml.png) 
+`login.html`
+![Captura de pantalla](README.md-data/loginhtml.png)
+
+`register.html`
+![Captura de pantalla](README.md-data/registerhtml.png)

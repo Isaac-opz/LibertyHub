@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
     <link rel="stylesheet" href="styleregister.css">
     <style>
-        /* Establecer la fuente para todo el documento */
         body {
             font-family: 'Roboto', sans-serif;
         }
@@ -28,16 +27,14 @@
         #back-button:hover {
             background-color: #FF8551;
         }
-
-        
     </style>
 </head>
 <body>
-    <!-- Botón de regreso a index.html -->
-    <a id="back-button" href="index.html">Regresar</a>
+    <a id="back-button" href="/home/isaac-opz/Documents/LibertyHub/Frontend/index.html">Regresar</a>
     <div class="register-container">
         <h2>Registrarse</h2>
-        <form action="/register" method="post">
+        <form action="http://localhost:6770/register" method="post">
+            
             <label for="nombre_completo">Nombre Completo:</label>
             <input type="text" id="nombre_completo" name="nombre_completo" required>
             
@@ -48,10 +45,12 @@
             <input type="password" id="contrasena" name="contrasena" required>
             
             <label for="tipo_de_usuario">Tipo de Usuario:</label>
-            <select id="tipo_de_usuario" name="tipo_de_usuario">
-                <option value="huesped">Huésped</option>
-                <option value="anfitrion">Anfitrión</option>
+            <select id="tipo_de_usuario" name="tipo_de_usuario" required>
+                <option value="huésped">Huésped</option>
+                <option value="invitado">Invitado</option>
+                <option value="anfitrión">Anfitrión</option>
             </select>
+
             
             <button type="submit">Registrarse</button>
         </form>

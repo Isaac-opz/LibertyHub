@@ -1,32 +1,23 @@
 const UserModel = require('../models/userModel');
 
-
 const UserController = {
-  login: (req, res) => {
-    const { email, password } = req.body;
-    UserModel.authenticate(email, password, (error, user) => {
-      if (error) {
-        res.status(500).json({ message: 'Error al autenticar el usuario' });
-      } else if (user) {
-        res.json({ message: 'Usuario autenticado con éxito', user });
-      } else {
-        res.status(401).json({ message: 'Correo electrónico o contraseña incorrectos' });
-      }
-    });
-  },
+    // Otros métodos del controlador
 
-  getProfile: (req, res) => {
-    const userId = req.params.id;
-    UserModel.getUserById(userId, (error, user) => {
-      if (error) {
-        res.status(500).json({ message: 'Error al obtener el perfil del usuario' });
-      } else if (user) {
-        res.json(user);
-      } else {
-        res.status(404).json({ message: 'Usuario no encontrado' });
-      }
-    });
-  }
+    register: (req, res) => {
+      const { nombre_completo, correo, contrasena, tipo_de_usuario } = req.body;
+        // Validar datos (puedes hacer más validaciones aquí)
+        if (!nombre_completo || !correo || !contrasena || !tipo_de_usuario) {
+            return res.status(400).json({ message: 'Todos los campos son obligatorios' });
+        }
+
+        // Insertar el nuevo usuario en la base de datos
+        UserModel.createUser(nombre_completo, correo, contrasena, tipo_de_usuario, (error, newUser) => {
+            if (error) {
+                return res.status(500).json({ message: 'Error al registrar el usuario' });
+            }
+            res.status(201).json({ message: 'Usuario registrado con éxito', user: newUser });
+        });
+    }
 };
-
+// autenticación necesaria
 module.exports = UserController;
