@@ -9,45 +9,34 @@
     text-align: center;
 }
 
-h2 {
+.register-container h2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-label {
-    display: block;
+.register-container p {
     margin-bottom: 10px;
     font-weight: bold;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
+#back-button {
+    display: block;
+    width: 100px;
+    height: 100px;
     background-color: #ff5722;
     color: #fff;
+    text-decoration: none;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    border-radius: 50%; /* Hacer el botón redondo */
     font-weight: bold;
+    text-align: center;
+    line-height: 100px; /* Centrar verticalmente */
+    margin: 15px auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
 }
 
-button:hover {
+#back-button:hover {
     background-color: #FF8551;
 }
 
