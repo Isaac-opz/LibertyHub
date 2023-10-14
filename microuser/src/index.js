@@ -1,6 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
-const cors = require('cors'); // Agrega esta línea
+const cors = require('cors'); // Comunicacion http a json (peticiones)
 const UserController = require('./controllers/userController');
 
 const app = express();
@@ -8,7 +8,7 @@ const PORT = 6770;
 
 // Middleware
 app.use(morgan('dev'));
-app.use(cors()); // Agrega esta línea para habilitar CORS
+app.use(cors()); // Línea para habilitar CORS
 app.use(express.json());
 
 // Rutas
