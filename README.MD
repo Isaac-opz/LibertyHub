@@ -34,10 +34,8 @@ Este proyecto consta de varios microservicios, cada uno con un prop√≥sito espec√
 
 ## Participantes
 
-- Juan Pablo Ramirez
 - Danna Salamanca
 - Juan Pablo Granados
-- Juliana Serrano
 - Isaac Piedrahita
 
 ## Requisitos
