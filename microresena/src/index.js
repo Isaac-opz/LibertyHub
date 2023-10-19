@@ -9,8 +9,8 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 // Rutas
-app.get('/reviews', reseñaController.getReviews);
-app.post('/reviews', reseñaController.postReview);
+app.get('/reviews', reseñaController.route);
+app.post('/reviews', reseñaController.route);
 
 const PORT = 3000;
 app.listen(PORT, () => {

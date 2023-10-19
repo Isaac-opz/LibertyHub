@@ -1,10 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
-const resenaModel = require('../models/resenaModel'); // Cambiar el nombre del modelo según corresponda
+const resenaModel = require('../models/reseñaModel'); // Cambiar el nombre del modelo según corresponda
 
 // Endpoint para obtener todas las reseñas de una propiedad específica
-router.get('/propiedades/:propiedadId/resenas', async (req, res) => {
+router.get('/propiedades/:propiedadId/resenas', obtenerResenas);
+
+// Endpoint para crear una nueva reseña para una propiedad
+router.post('/propiedades/:propiedadId/resenas', crearResena);
+
+// Función para obtener todas las reseñas de una propiedad específica
+async function obtenerResenas(req, res) {
     const propiedadId = req.params.propiedadId;
     try {
         const reseñas = await resenaModel.obtenerReseñasDePropiedad(propiedadId);
@@ -12,10 +18,10 @@ router.get('/propiedades/:propiedadId/resenas', async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: 'Error al obtener las reseñas de la propiedad' });
     }
-});
+}
 
-// Endpoint para crear una nueva reseña para una propiedad
-router.post('/propiedades/:propiedadId/resenas', async (req, res) => {
+// Función para crear una nueva reseña para una propiedad
+async function crearResena(req, res) {
     const propiedadId = req.params.propiedadId;
     const { usuario, reseña, puntuación } = req.body;
 
@@ -44,21 +50,23 @@ router.post('/propiedades/:propiedadId/resenas', async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: 'Error al crear la reseña' });
     }
-});
+}
 
 // Función para obtener el tipo de usuario (propenso a cambios)
 async function obtenerTipoUsuario(usuarioId) {
     // Realizar una solicitud al microservicio de usuarios para obtener el tipo de usuario
-    const response = await axios.get(`http://192.168.56.2:3003/usuarios/${usuarioId}`);
+    const response = await axios.get(`http://localhost:3003/usuarios/${usuarioId}`);
     return response.data.tipoUsuario;
 }
 
 // Función para enviar el promedio de puntuaciones al microservicio de propiedades
 async function enviarPromedioPuntuacionesAPropiedad(propiedadId, promedioPuntuaciones) {
     // Realizar una solicitud al microservicio de propiedades para enviar el promedio de puntuaciones
-    await axios.put(`http://192.168.56.2:3004/propiedades/${propiedadId}`, {
+    await axios.put(`http://localhost:3004/propiedades/${propiedadId}`, {
         promedioPuntuaciones
     });
 }
 
 module.exports = router;
+
+
