@@ -1,6 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
-const propertyController = require('./controllers/propertyController');
+const propertyController = require('./controllers/propertycontroller');
 
 const app = express();
 
