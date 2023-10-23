@@ -62,7 +62,7 @@ async function obtenerTipoUsuario(usuarioId) {
 // Función para enviar el promedio de puntuaciones al microservicio de propiedades
 async function enviarPromedioPuntuacionesAPropiedad(propiedadId, promedioPuntuaciones) {
     // Realizar una solicitud al microservicio de propiedades para enviar el promedio de puntuaciones
-    await axios.put(`http://localhost:3004/propiedades/${propiedadId}`, {
+    await axios.put(`http://localhost:6771/properties/${propiedadId}`, {
         promedioPuntuaciones
     });
 }

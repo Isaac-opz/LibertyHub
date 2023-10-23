@@ -22,22 +22,61 @@
     <main>
         <section class="property-list">
             <h1>Propiedades:</h1>
-            <div class="property-card">
-                <h3>Propiedad ABC</h3>
-                <p>Calificación: 4.5/5</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nunc id aliquet lacinia, velit mauris tincidunt urna, nec ultrices ligula risus in justo.</p>
-                <p>- John Doe</p>
-            </div>
-            <div class="property-card">
-                <h3>Propiedad XYZ</h3>
-                <p>Calificación: 5/5</p>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                <p>- Jane Smith</p>
-            </div>
+            <div id="property-list"></div>
         </section>
     </main>
     <footer>
         <p>&copy; 2023 LibertyHub - Plataforma de Reseñas de Airbnbs en Nueva York</p>
     </footer>
+    <script>
+        // Función para mostrar las propiedades en la página
+        async function displayProperties(properties) {
+            const propertyList = document.getElementById('property-list');
+
+            properties.forEach((property) => {
+                const propertyCard = document.createElement('div');
+                propertyCard.className = 'property-card';
+
+                const propertyName = document.createElement('h3');
+                propertyName.textContent = property.nombre; // Ajusta esto según la estructura de tus propiedades
+
+                const propertyDescription = document.createElement('p');
+                propertyDescription.textContent = "calificación: " + property.calificacion; // Ajusta esto según la estructura de tus propiedades
+
+                // Puedes continuar agregando más detalles de propiedad si es necesario
+
+                propertyCard.appendChild(propertyName);
+                propertyCard.appendChild(propertyDescription);
+
+                propertyList.appendChild(propertyCard);
+            });
+        }
+
+        // Realiza la solicitud GET al servidor para obtener las propiedades
+        async function getProperties() {
+            try {
+                const response = await fetch('http://localhost:6771/properties', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                });
+
+                if (response.ok) {
+                    const properties = await response.json();
+                    displayProperties(properties);
+                } else {
+                    // Maneja errores de respuesta del servidor
+                    console.error('Error al obtener las propiedades.');
+                }
+            } catch (error) {
+                // Maneja errores de red
+                console.error('Error de red al obtener las propiedades.');
+            }
+        }
+
+        // Llama a la función para obtener y mostrar las propiedades al cargar la página
+        window.addEventListener('load', getProperties);
+    </script>
 </body>
 </html>
