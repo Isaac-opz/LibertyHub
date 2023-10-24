@@ -48,7 +48,7 @@ Lista de requisitos necesarios para utilizar o contribuir al proyecto. Esto podr
 
 Instrucciones detalladas sobre cómo instalar y configurar el proyecto en un entorno local o en un servidor.
 
-```bash
-#Ejecutar microservicios (dentro de la carpeta de cada microservicio)
-node src/index.js
-```
+- Ejecutar microservicios (dentro de la carpeta de cada microservicio):
+    ```bash
+    node src/index.js
+    ```
