@@ -1,7 +1,7 @@
 # Documentación del Proyecto
 
 <p align="left">
-    <img src="README.MD-data/logo.png" alt="Logo del Proyecto" width="130" style="vertical-align: middle;">
+    <img src="README.md-data/logo.png" alt="Logo del Proyecto" width="130" style="vertical-align: middle;">
 </p>
 
 <p align="left"> 
