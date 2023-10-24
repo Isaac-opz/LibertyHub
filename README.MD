@@ -1,7 +1,8 @@
-
 # Documentación del Proyecto
 
-## LibertyHub
+<p align="left">
+    <img src="README.MD-data/logo.png" alt="Logo del Proyecto" width="130" style="vertical-align: middle;">
+</p>
 
 <p align="left"> 
      <img alt="colaborators" title="colaborators" src="https://img.shields.io/github/contributors/Isaac-opz/LibertyHub?style=plastic&logo=GitHub&labelColor=black&color=blue"    
@@ -10,6 +11,7 @@
     </p>
 
 `Proyecto Redes e Infraestructura - Primera parte`
+
 ## Tabla de Contenidos
 
 1. [Introducción](#introducción)
