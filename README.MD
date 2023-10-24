@@ -49,17 +49,6 @@ Lista de requisitos necesarios para utilizar o contribuir al proyecto. Esto podr
 Instrucciones detalladas sobre cómo instalar y configurar el proyecto en un entorno local o en un servidor.
 
 ```bash
-# Template Comando Bash
-npm install mi-proyecto
+#Ejecutar microservicios (dentro de la carpeta de cada microservicio)
+node src/index.js
 ```
-
-Página actual: 
-
-`index.html`
-![Captura de pantalla](README.md-data/capturaweb.png) 
-
-`login.html`
-![Captura de pantalla](README.md-data/loginhtml.png)
-
-`register.html`
-![Captura de pantalla](README.md-data/registerhtml.png)

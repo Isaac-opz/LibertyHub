@@ -10,6 +10,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 app.get('/properties', propertyController.getProperties);
+app.post('/properties', propertyController.createProperty);
 
 const PORT = 6771;
 app.listen(PORT, () => {
