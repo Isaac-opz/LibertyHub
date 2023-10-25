@@ -72,8 +72,14 @@ const createProperty = async (req, res) => {
     }
 };
 
-// Exportar propiedades
+const getPropertyById = async (id) => {
+    const query = 'SELECT * FROM libertyhub.propiedades WHERE id = ?';
+    const [results] = await connection.execute(query, [id]);
+    return results[0]; // Retorna la primera propiedad que coincida con el ID o undefined si no hay coincidencias
+};
+
 module.exports = {
     getProperties,
-    createProperty
+    createProperty,
+    getPropertyById
 };

@@ -7,10 +7,11 @@ const app = express();
 
 app.use(cors()); // Habilita CORS para todas las rutas
 app.use(morgan('dev'));
-app.use(express.json());
+//app.use(express.json());
 
 app.get('/properties', propertyController.getProperties);
-app.post('/properties', propertyController.createProperty);
+app.post('/properties', express.json(), propertyController.createProperty);
+app.get('/properties/:id', propertyController.getPropertyById);
 
 const PORT = 6771;
 app.listen(PORT, () => {

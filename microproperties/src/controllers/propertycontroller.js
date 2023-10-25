@@ -24,7 +24,22 @@ const createProperty = async (req, res) => {
     }
 };
 
+const getPropertyById = async (req, res) => {
+    try {
+        const id = req.params.id; // Obtiene el ID desde la URL
+        const property = await Property.getPropertyById(id);
+        if (property) {
+            res.json(property);
+        } else {
+            res.status(404).json({ message: 'Propiedad no encontrada' });
+        }
+    } catch (error) {
+        res.status(500).json({ message: 'Error al obtener la propiedad' });
+    }
+};
+
 module.exports = {
     getProperties,
-    createProperty
+    createProperty,
+    getPropertyById
 };
