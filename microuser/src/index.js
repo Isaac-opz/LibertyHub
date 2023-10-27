@@ -13,6 +13,7 @@ app.use(express.json());
 
 // Rutas
 app.post("/register", UserController.register);
+app.post("/verify", UserController.verifyUser);
 
 // Iniciar el servidor
 app.listen(PORT, () => {

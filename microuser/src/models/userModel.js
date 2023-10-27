@@ -21,7 +21,17 @@ const UserModel = {
             }
         });
     },
-};
 
+    getUserByEmail: (correo, callback) => {
+        const query = 'SELECT * FROM users WHERE correo = ?';
+        connection.query(query, [correo], (error, results) => {
+            if (error) {
+                callback(error, null);
+            } else {
+                callback(null, results);
+            }
+        });
+    }
+};
 
 module.exports = UserModel;
