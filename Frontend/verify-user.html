@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Usuario</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <link rel="stylesheet" href="explore-styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Verificar Usuario</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="explore.html">Explorar Propiedades</a></li>
+                <li><a href="register.html">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="user-verification-form">
+            <form id="verify-user-form">
+                <input type="email" id="correo" placeholder="Correo" required>
+                <input type="password" id="contrasena" placeholder="Contraseña" required>
+                <button type="submit">Verificar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 LibertyHub - Plataforma de Reseñas de Airbnbs en Nueva York</p>
+    </footer>
+    <script>
+        document.getElementById('verify-user-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const userData = {
+                correo: document.getElementById('correo').value,
+                contrasena: document.getElementById('contrasena').value
+            };
+
+            try {
+                const response = await fetch('http://localhost:6770/verify', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(userData)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    if (result.userType === 'huésped') { // Asumiendo que el tipo de usuario huésped es 'huesped'
+                        window.location.href = 'add-property.html';
+                    } else {
+                        alert('No tienes permiso para crear una propiedad nueva.');
+                    }
+                } else {
+                    alert(result.message);
+                }
+            } catch (error) {
+                alert('Error al verificar el usuario.');
+            }
+        });
+    </script>
+</body>
+
+</html>

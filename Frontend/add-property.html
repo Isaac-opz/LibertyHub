@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Propiedad</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <link rel="stylesheet" href="explore-styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Agregar Propiedad</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="explore.html">Explorar Propiedades</a></li>
+                <li><a href="register.html">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="property-form">
+            <form id="create-property-form">
+                <input type="text" id="nombre" placeholder="Nombre de la propiedad" required>
+                <input type="number" id="id_anfitrion" placeholder="ID Anfitrión" required>
+                <input type="text" id="nombre_anfitrion" placeholder="Nombre Anfitrión" required>
+                <input type="text" id="distrito" placeholder="Distrito" required>
+                <input type="text" id="barrio" placeholder="Barrio" required>
+                <input type="number" id="latitud" step="0.00001" placeholder="Latitud" required>
+                <input type="number" id="longitud" step="0.00001" placeholder="Longitud" required>
+                <input type="text" id="tipo_habitacion" placeholder="Tipo de Habitación" required>
+                <input type="number" id="precio" placeholder="Precio" required>
+                <input type="number" id="minimo_noches" placeholder="Mínimo Noches" required>
+                <input type="number" id="numero_opiniones" placeholder="Número de Opiniones" required>
+                <input type="text" id="ultima_opinion" placeholder="Última Opinión" required>
+                <input type="number" id="opiniones_por_mes" step="0.01" placeholder="Opiniones por Mes" required>
+                <input type="number" id="propiedades_del_anfitrion" placeholder="Propiedades del Anfitrión" required>
+                <input type="number" id="dias_habiles" placeholder="Días Hábiles" required>
+                <input type="number" id="calificacion" step="0.1" placeholder="Calificación" required>
+                <button type="submit">Agregar Propiedad</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 LibertyHub - Plataforma de Reseñas de Airbnbs en Nueva York</p>
+    </footer>
+    <script>
+        document.getElementById('create-property-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const propertyData = {
+                nombre: document.getElementById('nombre').value,
+                id_anfitrion: document.getElementById('id_anfitrion').value,
+                nombre_anfitrion: document.getElementById('nombre_anfitrion').value,
+                distrito: document.getElementById('distrito').value,
+                barrio: document.getElementById('barrio').value,
+                latitud: parseFloat(document.getElementById('latitud').value),
+                longitud: parseFloat(document.getElementById('longitud').value),
+                tipo_habitacion: document.getElementById('tipo_habitacion').value,
+                precio: parseInt(document.getElementById('precio').value),
+                minimo_noches: parseInt(document.getElementById('minimo_noches').value),
+                numero_opiniones: parseInt(document.getElementById('numero_opiniones').value),
+                ultima_opinion: document.getElementById('ultima_opinion').value,
+                opiniones_por_mes: parseFloat(document.getElementById('opiniones_por_mes').value),
+                propiedades_del_anfitrion: parseInt(document.getElementById('propiedades_del_anfitrion').value),
+                dias_habiles: parseInt(document.getElementById('dias_habiles').value),
+                calificacion: parseFloat(document.getElementById('calificacion').value)
+            };
+
+            try {
+                const response = await fetch('http://localhost:6771/properties', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(propertyData)
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    alert(result.message);
+                    window.location.href = 'explore.html'; // Redirige de nuevo a la página de explorar
+                } else {
+                    const errorData = await response.json();
+                    alert(errorData.message);
+                }
+            } catch (error) {
+                alert('Error al agregar la propiedad.');
+            }
+        });
+    </script>
+</body>
+
+</html>

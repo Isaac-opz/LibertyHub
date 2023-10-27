@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
     <link rel="stylesheet" href="explore-styles.css">
 </head>
+
 <body>
     <header>
         <h1>Explorar Propiedades en Nueva York</h1>
@@ -19,6 +21,9 @@
         </nav>
     </header>
     <main>
+        <section class="add-property-button">
+            <a href="verify-user.html" class="btn">Agregar Nueva Propiedad</a>
+        </section>
         <section class="property-list">
             <h1>Propiedades:</h1>
             <div id="property-list"></div>
@@ -37,12 +42,10 @@
                 propertyCard.className = 'property-card';
 
                 const propertyName = document.createElement('h3');
-                propertyName.textContent = property.nombre; // esto se ajusta según la estructura de tus propiedades
+                propertyName.textContent = property.nombre;
 
                 const propertyDescription = document.createElement('p');
-                propertyDescription.textContent = "calificación: " + property.calificacion; // esto se ajusta según la estructura de tus propiedades
-
-                // se pueden agregar más detalles de propiedad si es necesario
+                propertyDescription.textContent = "calificación: " + property.calificacion;
 
                 propertyCard.appendChild(propertyName);
                 propertyCard.appendChild(propertyDescription);
@@ -65,11 +68,9 @@
                     const properties = await response.json();
                     displayProperties(properties);
                 } else {
-                    // Maneja errores de respuesta del servidor
                     console.error('Error al obtener las propiedades.');
                 }
             } catch (error) {
-                // Maneja errores de red
                 console.error('Error de red al obtener las propiedades.');
             }
         }
@@ -78,4 +79,5 @@
         window.addEventListener('load', getProperties);
     </script>
 </body>
+
 </html>
