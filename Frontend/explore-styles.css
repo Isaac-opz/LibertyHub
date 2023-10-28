@@ -62,9 +62,32 @@ nav ul li a:hover {
     font-size: 16px;
 }
 
+.btn-add-property {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 10px 30px;
+    background-color: #4CAF50;  /* Cambiamos a un verde agradable */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    vertical-align: middle; /* Asegura que el ícono y el texto estén alineados verticalmente */
+}
+
+.btn-add-property:hover {
+    background-color: #45a049;
+}
+
+.btn-add-property .icon {
+    margin-right: 10px;  /* Espacio entre el ícono y el texto */
+}
 footer {
     background-color: #FF8551;
     color: #000;
     text-align: center;
-    padding: 80px 0;
+    padding: 50px 0;
 }
+
