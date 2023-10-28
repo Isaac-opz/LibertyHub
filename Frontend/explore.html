@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <img src="data/logo.png" alt="Logo de la página" id="logo-header">
     <title>Explorar Propiedades en Nueva York</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
     <link rel="stylesheet" href="explore-styles.css">
@@ -28,7 +29,9 @@
         </section>
         <section class="property-list">
             <h1>Propiedades:</h1>
-            <div id="property-list"></div>
+            <div class="container">
+                <div id="property-list"></div>
+            </div>
         </section>
     </main>
     <footer>
@@ -38,24 +41,24 @@
         // Función para mostrar las propiedades en la página
         async function displayProperties(properties) {
             const propertyList = document.getElementById('property-list');
-
+    
             properties.forEach((property) => {
                 const propertyCard = document.createElement('div');
                 propertyCard.className = 'property-card';
-
+    
                 const propertyName = document.createElement('h3');
                 propertyName.textContent = property.nombre;
-
+    
                 const propertyDescription = document.createElement('p');
                 propertyDescription.textContent = "calificación: " + property.calificacion;
-
+    
                 propertyCard.appendChild(propertyName);
                 propertyCard.appendChild(propertyDescription);
-
+    
                 propertyList.appendChild(propertyCard);
             });
         }
-
+    
         // Realiza la solicitud GET al servidor para obtener las propiedades
         async function getProperties() {
             try {
@@ -65,7 +68,7 @@
                         'Content-Type': 'application/json'
                     },
                 });
-
+    
                 if (response.ok) {
                     const properties = await response.json();
                     displayProperties(properties);
@@ -76,7 +79,7 @@
                 console.error('Error de red al obtener las propiedades.');
             }
         }
-
+    
         // Llama a la función para obtener y mostrar las propiedades al cargar la página
         window.addEventListener('load', getProperties);
     </script>

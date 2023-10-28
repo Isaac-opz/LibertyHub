@@ -1,3 +1,4 @@
+/* Estilos generales */
 * {
     margin: 0;
     padding: 0;
@@ -35,6 +36,7 @@ header h1 {
     margin: 0 auto; /* Centrar horizontalmente */
     padding-left: 350px; /* espacio para el logo */
 }
+
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -56,91 +58,47 @@ nav ul li a:hover {
     background-color: #FF5722;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+/* Formulario de Agregar Propiedad */
+.property-form {
+    margin: 60px auto;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #FF5722;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff; 
 }
 
-.property-list h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#property-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.property-card {
-    border: 1px solid #FFE7CE;
-    padding: 30px;
-    margin: 0;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-.property-card:hover {
-    transform: translateY(-10px);
-}
-
-.property-card h3 {
-    margin-top: 20px;
-    font-size: 24px;
-}
-
-.property-card p {
-    margin-top: 20px;
+#create-property-form input {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #FF5722;
+    border-radius: 5px;
     font-size: 16px;
 }
 
-.btn-add-property {
-    display: inline-block;
-    margin: 20px 0;
-    padding: 10px 30px;
-    background-color: #4CAF50;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
+#create-property-form button {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #ff5722;
+    color: #000;
+    border: none;
+    border-radius: 5px;
     font-size: 16px;
+    cursor: pointer;
     transition: background-color 0.3s ease;
-    text-align: center;
-    vertical-align: middle;
 }
 
-.btn-add-property:hover {
-    background-color: #45a049;
+#create-property-form button:hover {
+    background-color: #FF8551;
 }
 
-.btn-add-property .icon {
-    margin-right: 10px;
-}
-
-.add-property-button {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-}
-
+/* Pie de página */
 footer {
     background-color: #FF8551;
     color: #000;
     text-align: center;
-    padding: 40px 0;
+    padding: 50px 0;
 }
-
-@media (max-width: 900px) {
-    #property-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    #property-list {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
