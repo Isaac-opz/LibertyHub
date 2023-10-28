@@ -24,7 +24,7 @@ header {
 #logo-header {
     position: absolute;
     left: 20px;  /* Distancia del borde izquierdo */
-    top: 8%;    /* Centrado verticalmente */
+    top: 50%;    /* Centrado verticalmente */
     transform: translateY(-50%); /* Alineación vertical precisa */
     max-width: 150px;  /* Cambia este valor según el tamaño deseado para tu logo */
     z-index: 10;
