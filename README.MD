@@ -30,7 +30,7 @@ Este proyecto consta de varios microservicios, cada uno con un propósito espec�
 
 ### Microservicios presentes:
 
-**Listado de Propiedades:** Este microservicio se encarga de gestionar la información relacionada con las propiedades de AirBnB en Nueva York. Los usuarios podrían buscar y reseñar propiedades a través de este servicio.
+**Listado de Propiedades:** Este microservicio se encarga de gestionar la información relacionada con las propiedades de AirBnB en Nueva York.
 
 **Reseñas:** Este microservicio permitirá a los usuarios dejar reseñas y calificaciones para las propiedades en las que se han alojado. También puede incluir la funcionalidad para que los usuarios vean reseñas anteriores y calificaciones.
 
