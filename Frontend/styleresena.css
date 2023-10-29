@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     background-color: var(--bg-dark);
     margin: 0;
     padding: 0;

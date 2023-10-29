@@ -41,7 +41,7 @@
     text-align: center;
     line-height: 100px; /* Centrar verticalmente */
     margin: 15px auto;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     font-size: 18px;
 }
 
@@ -50,7 +50,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     background-color: var(--bg-dark);
     color: var(--text-dark);
     line-height: 1.6;

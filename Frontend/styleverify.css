@@ -12,7 +12,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     background-color: var(--bg-dark);
     color: var(--text-dark);
     line-height: 1.6;
@@ -85,6 +85,7 @@ nav ul li a:hover {
     font-size: 16px;
     color: var(--text-dark);
     background-color: var(--bg-dark);
+    font-family: 'Roboto Mono', monospace;
 }
 
 #verify-user-form button {
@@ -97,6 +98,7 @@ nav ul li a:hover {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: 'Roboto Mono', monospace;
 }
 
 #verify-user-form button:hover {

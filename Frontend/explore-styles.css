@@ -11,7 +11,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     background-color: var(--bg-dark);
     color: var(--text-dark);
     line-height: 1.6;
