@@ -1,4 +1,10 @@
 /* Estilos generales */
+:root {
+    --bg-dark: #121212;
+    --text-dark: #e0e0e0;
+    --primary-color: #ff6f00;  /* Color naranja */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,14 +13,14 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #FFE7CE;
-    color: #000;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
     line-height: 1.6;
 }
 
 header {
-    background-color: #FF8551;
-    color: #000;
+    background-color: #333;
+    color: var(--text-dark);
     padding: 50px 0;
     display: flex;
     justify-content: space-between;
@@ -24,17 +30,17 @@ header {
 
 #logo-header {
     position: absolute;
-    left: 20px;  /* Distancia del borde izquierdo */
-    top: 50%;    /* Centrado verticalmente */
-    transform: translateY(-50%); /* Alineación vertical precisa */
-    max-width: 150px;  /* Cambia este valor según el tamaño deseado para tu logo */
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 150px;
     z-index: 10;
 }
 
 header h1 {
     font-size: 24px;
-    margin: 0 auto; /* Centrar horizontalmente */
-    padding-left: 350px; /* espacio para el logo */
+    margin: 0 auto;
+    padding-left: 350px;
 }
 
 nav ul {
@@ -47,7 +53,7 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: #000;
+    color: var(--text-dark);
     padding: 5px 10px;
     border-radius: 5px;
     transition: color 0.3s ease, background-color 0.3s ease;
@@ -55,7 +61,7 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #fff;
-    background-color: #FF5722;
+    background-color: #555;
 }
 
 /* Formulario de Verificación */
@@ -64,26 +70,28 @@ nav ul li a:hover {
     width: 100%;
     max-width: 400px;
     padding: 20px;
-    border: 1px solid #FF5722;
+    border: 1px solid var(--primary-color);
     border-radius: 5px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-    background-color: #fff; 
+    background-color: var(--bg-dark);
 }
 
 #verify-user-form input {
     width: 100%;
     padding: 10px 15px;
     margin-bottom: 15px;
-    border: 1px solid #FF5722;
+    border: 1px solid var(--primary-color);
     border-radius: 5px;
     font-size: 16px;
+    color: var(--text-dark);
+    background-color: var(--bg-dark);
 }
 
 #verify-user-form button {
     width: 100%;
     padding: 10px 15px;
-    background-color: #ff5722;
-    color: #000;
+    background-color: var(--primary-color);
+    color: var(--text-dark);
     border: none;
     border-radius: 5px;
     font-size: 16px;
@@ -92,15 +100,13 @@ nav ul li a:hover {
 }
 
 #verify-user-form button:hover {
-    background-color: #FF8551;
+    background-color: #ff8b33;
 }
 
 /* Pie de página */
 footer {
-    background-color: #FF8551;
-    color: #000;
+    background-color: #333;
+    color: var(--text-dark);
     text-align: center;
     padding: 113px 0;
 }
-
-

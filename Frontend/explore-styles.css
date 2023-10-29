@@ -4,16 +4,22 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bg-dark: #121212;
+    --text-dark: #e0e0e0;
+    --primary-color: #ff6f00;  /* Color naranja */
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #FFE7CE;
-    color: #000;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
     line-height: 1.6;
 }
 
 header {
-    background-color: #FF8551;
-    color: #000;
+    background-color: #333;
+    color: var(--text-dark);
     padding: 50px 0;
     display: flex;
     justify-content: space-between;
@@ -23,18 +29,19 @@ header {
 
 #logo-header {
     position: absolute;
-    left: 20px;  /* Distancia del borde izquierdo */
-    top: 50%;    /* Centrado verticalmente */
-    transform: translateY(-50%); /* Alineación vertical precisa */
-    max-width: 150px;  /* Cambia este valor según el tamaño deseado para tu logo */
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 150px;
     z-index: 10;
 }
 
 header h1 {
     font-size: 24px;
-    margin: 0 auto; /* Centrar horizontalmente */
-    padding-left: 350px; /* espacio para el logo */
+    margin: 0 auto;
+    padding-left: 350px;
 }
+
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -45,7 +52,7 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: #000;
+    color: var(--text-dark);
     padding: 5px 10px;
     border-radius: 5px;
     transition: color 0.3s ease, background-color 0.3s ease;
@@ -53,7 +60,7 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #fff;
-    background-color: #FF5722;
+    background-color: #555;
 }
 
 .container {
@@ -74,12 +81,14 @@ nav ul li a:hover {
 }
 
 .property-card {
-    border: 1px solid #FFE7CE;
+    border: 1px solid #444;
     padding: 30px;
     margin: 0;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     transition: transform 0.3s;
+    background-color: #444;
+    color: var(--text-dark);
 }
 
 .property-card:hover {
@@ -100,8 +109,8 @@ nav ul li a:hover {
     display: inline-block;
     margin: 20px 0;
     padding: 10px 30px;
-    background-color: #4CAF50;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--text-dark);
     text-decoration: none;
     border-radius: 50px;
     font-weight: bold;
@@ -112,7 +121,7 @@ nav ul li a:hover {
 }
 
 .btn-add-property:hover {
-    background-color: #45a049;
+    background-color: #ff8b33;
 }
 
 .btn-add-property .icon {
@@ -126,8 +135,8 @@ nav ul li a:hover {
 }
 
 footer {
-    background-color: #FF8551;
-    color: #000;
+    background-color: #333;
+    color: var(--text-dark);
     text-align: center;
     padding: 40px 0;
 }
@@ -143,4 +152,3 @@ footer {
         grid-template-columns: repeat(1, 1fr);
     }
 }
-

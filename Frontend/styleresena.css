@@ -1,25 +1,34 @@
+:root {
+    --bg-dark: #121212;
+    --text-dark: #e0e0e0;
+    --primary-color: #ff6f00;  /* Color naranja */
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #FFE7CE;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-dark);
     margin: 0;
     padding: 0;
+    color: var(--text-dark);
 }
 
 .container {
     max-width: 600px;
     margin: 50px auto;
-    background-color: #fff;
+    background-color: #333;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 h1, h2 {
     text-align: center;
+    color: var(--text-dark);
 }
 
 label {
     display: block;
     margin: 10px 0 5px 0;
+    color: var(--text-dark);
 }
 
 input[type="text"],
@@ -29,21 +38,23 @@ textarea {
     width: 95%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #555;
     border-radius: 4px;
+    background-color: #444;
+    color: var(--text-dark);
 }
 
 button {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #ff5722;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--text-dark);
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #FF8551;
+    background-color: #ff8b33;
 }

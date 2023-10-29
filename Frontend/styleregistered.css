@@ -1,30 +1,39 @@
+:root {
+    --bg-dark: #121212;
+    --text-dark: #e0e0e0;
+    --primary-color: #ff6f00;  /* Color naranja */
+}
+
 .register-container {
     width: 300px;
     margin: 70px auto;
     padding: 20px;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
+    border: 1px solid #555;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #333;
     border-radius: 8px;
     text-align: center;
+    color: var(--text-dark);
 }
 
 .register-container h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: var(--text-dark);
 }
 
 .register-container p {
     margin-bottom: 10px;
     font-weight: bold;
+    color: var(--text-dark);
 }
 
 #back-button {
     display: block;
     width: 100px;
     height: 100px;
-    background-color: #ff5722;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--bg-dark);
     text-decoration: none;
     border: none;
     border-radius: 50%; /* Hacer el botón redondo */
@@ -37,12 +46,12 @@
 }
 
 #back-button:hover {
-    background-color: #FF8551;
+    background-color: #ff8b33;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #FFE7CE;
-    color: #000;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
     line-height: 1.6;
 }

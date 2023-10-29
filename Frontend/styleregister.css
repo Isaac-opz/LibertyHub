@@ -1,73 +1,26 @@
-.login-container {
-    width: 300px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #FFE7CE;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+:root {
+    --bg-dark: #121212;
+    --text-dark: #e0e0e0;
+    --primary-color: #ff6f00;  /* Color naranja */
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input { 
-    width: 85%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #FFE7CE;
-    border-radius: 4px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #ff5722;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #FF8551;
-}
-
+.login-container,
 .register-container {
     width: 300px;
-    margin: 70px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #FFE7CE;
-    color: #000;
-    line-height: 1.6;
-}
-
-.login-container, .register-container {
-    width: 300px;
     margin: 50px auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #444;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color: #333;
     transition: transform 0.3s;
+    color: var(--text-dark);
 }
 
 h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
+    color: var(--text-dark);
     font-weight: 600;
 }
 
@@ -75,29 +28,33 @@ label {
     display: block;
     margin-bottom: 15px;
     font-weight: 500;
-    color: #555;
+    color: var(--text-dark);
 }
 
-input, select {
+input, 
+select {
     width: 85%;
     padding: 10px;
     margin: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #555;
     border-radius: 5px;
     font-size: 14px;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
     transition: border-color 0.3s;
 }
 
-input:focus, select:focus {
-    border-color: #007BFF;
+input:focus, 
+select:focus {
+    border-color: var(--primary-color);
     outline: none;
 }
 
 button {
     width: 100%;
     padding: 10px;
-    background-color: #ff5722;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--bg-dark);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -109,13 +66,14 @@ button:hover {
     background-color: #FF8551;
 }
 
-.login-container:hover, .register-container:hover {
+.login-container:hover,
+.register-container:hover {
     transform: scale(1.02);
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #FFE7CE;
-    color: #000;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
     line-height: 1.6;
 }
