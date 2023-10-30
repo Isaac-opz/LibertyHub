@@ -13,8 +13,8 @@ exports.obtenerReseñasDePropiedad = async (propiedadId) => {
 };
 
 exports.crearReseña = async (nuevaReseña) => {
-    const { propiedadId, usuario, reseña, puntuación } = nuevaReseña;
-    await connection.query('INSERT INTO resenas (propiedad, usuario, reseña, puntuación) VALUES (?, ?, ?, ?)', [propiedadId, usuario, reseña, puntuación]);
+    const { comentarios, ranking } = nuevaReseña;
+    await connection.query('INSERT INTO resenas (comentarios, ranking) VALUES (?, ?, ?)', [comentarios, ranking]);
 };
 
 // Nota: La función para calcular el promedio de puntuaciones puede mantenerse para uso futuro.

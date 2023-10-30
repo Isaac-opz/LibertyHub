@@ -11,15 +11,11 @@ exports.obtenerResenas = async (req, res) => {
 }
 
 exports.crearResena = async (req, res) => {
-    const propiedadId = req.params.propiedadId;
-    const { usuario, reseña, puntuación } = req.body;
-
+    const {comentarios, ranking} = req.body;
     try {
         const nuevaReseña = {
-            propiedadId,
-            usuario,
-            reseña,
-            puntuación
+            comentarios,
+            ranking
         };
         await resenaModel.crearReseña(nuevaReseña);
         res.json({ message: 'Reseña creada exitosamente' });

@@ -10,6 +10,6 @@
     "start-microproperties": "node microproperties/src/index.js",
     "start-microuser": "node microuser/src/index.js",
     "start-microresena": "node microresena/src/index.js",
-    "start-all": "concurrently \"npm run start-microproperties\" \"npm run start-microuser\""
+    "start-all": "concurrently \"npm run start-microproperties\" \"npm run start-microuser\" \"npm run start-microresena\""
   }
 }
