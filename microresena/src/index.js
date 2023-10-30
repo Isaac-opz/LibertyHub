@@ -1,18 +1,20 @@
 const express = require('express');
 const morgan = require('morgan');
-const reseñaController = require('./controllers/reseñaController');
+const cors = require('cors');
+const resenaController = require('./controllers/resenaController');
 
 const app = express();
 
 // Middleware
 app.use(morgan('dev'));
+app.use(cors());
 app.use(express.json());
 
 // Rutas
-app.get('/reviews', reseñaController.route);
-app.post('/reviews', reseñaController.route);
+app.use('/propiedades/:propiedadId/resenas', resenaController.obtenerResenas);
+app.use('/propiedades/:propiedadId/resenas', resenaController.crearResena);
 
-const PORT = 3000;
+const PORT = 3002;  
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Reseña Microservicio corriendo en http://localhost:${PORT}`);
 });
