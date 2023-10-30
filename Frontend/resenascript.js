@@ -69,4 +69,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // Llama a cargarReseñas para cargar las reseñas iniciales (reemplaza "propiedadId" con el valor correcto)
     cargarReseñas('propiedadId');
 });
-

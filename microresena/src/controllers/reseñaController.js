@@ -68,5 +68,3 @@ async function enviarPromedioPuntuacionesAPropiedad(propiedadId, promedioPuntuac
 }
 
 module.exports = router;
-
-

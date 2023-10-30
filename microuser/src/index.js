@@ -19,4 +19,3 @@ app.post("/verify", UserController.verifyUser);
 app.listen(PORT, () => {
   console.log('Microservicio Usuarios ejecutándose en el puerto ' + PORT);
 });
-
