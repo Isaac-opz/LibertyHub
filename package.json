@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "morgan": "^1.10.0",
@@ -8,6 +9,7 @@
   "scripts": {
     "start-microproperties": "node microproperties/src/index.js",
     "start-microuser": "node microuser/src/index.js",
-    "start-microresena": "node microresena/src/index.js"
+    "start-microresena": "node microresena/src/index.js",
+    "start-all": "concurrently \"npm run start-microproperties\" \"npm run start-microuser\""
   }
 }
