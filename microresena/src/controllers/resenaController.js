@@ -5,7 +5,7 @@ exports.obtenerResenas = async (req, res) => {
     const propiedadId = req.params.propiedadId;
     try {
         // Obteniendo las propiedades mediante una petición axios al propertiesController
-        const response = await axios.get(`http://localhost:{YOUR_PROPERTIES_PORT}/propiedades/${propiedadId}`);
+        const response = await axios.get(`http://localhost:6771/propiedades/${propiedadId}`);
         
         const propiedades = response.data;
         const resenas = await resenaModel.obtenerResenasDePropiedad(propiedadId);
