@@ -14,7 +14,7 @@ app.use(express.json());
 app.use('/propiedades/:propiedadId/resenas', resenaController.obtenerResenas);
 app.use('/propiedades/:propiedadId/resenas', resenaController.crearResena);
 
-const PORT = 3002;  
+const PORT = 6773;  
 app.listen(PORT, () => {
     console.log(`Reseña Microservicio corriendo en http://localhost:${PORT}`);
 });
