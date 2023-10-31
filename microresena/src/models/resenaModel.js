@@ -7,14 +7,12 @@ const connection = mysql.createPool({
     database: 'libertyhub'
 });
 
-exports.obtenerReseñasDePropiedad = async (propiedadId) => {
+exports.obtenerResenasDePropiedad = async (propiedadId) => {
     const [rows] = await connection.query('SELECT * FROM resenas WHERE propiedad = ?', [propiedadId]);
     return rows;
 };
 
-exports.crearReseña = async (nuevaReseña) => {
-    const { comentarios, ranking } = nuevaReseña;
-    await connection.query('INSERT INTO resenas (comentarios, ranking) VALUES (?, ?, ?)', [comentarios, ranking]);
+exports.crearResena = async (nuevaResena) => {
+    const { comentarios, ranking } = nuevaResena;
+    await connection.query('INSERT INTO resenas (comentarios, ranking) VALUES (?, ?)', [comentarios, ranking]);
 };
-
-// Nota: La función para calcular el promedio de puntuaciones puede mantenerse para uso futuro.
