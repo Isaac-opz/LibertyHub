@@ -1,4 +1,5 @@
 const mysql = require('mysql2/promise');
+const reviewModel = require('../../../microresena/src/models/reviewModel');
 const connection = mysql.createPool({
     host: 'localhost',
     user: 'root',
@@ -48,11 +49,28 @@ const createProperty = async (propertyData) => {
 const getPropertyById = async (id) => {
     const query = 'SELECT * FROM libertyhub.propiedades WHERE id = ?';
     const [results] = await connection.execute(query, [id]);
-    return results[0]; // Retorna la primera propiedad que coincida con el ID o undefined si no hay coincidencias
+    return results[0]; // Retorna la primera propiedad que encuentre con el ID o tira undefined si no existen coincidencias
 };
+
+const updateProperty = async (propertyId, propertyData) => {
+    const query = `
+        UPDATE libertyhub.propiedades
+        SET calificacion = ?
+        WHERE id = ?;
+    `;
+    const values = [
+        propertyData.calificacion,
+        propertyId
+    ];
+
+    const [result] = await connection.execute(query, values);
+    return result;
+};
+
 
 module.exports = {
     getProperties,
     createProperty,
-    getPropertyById
+    getPropertyById,
+    updateProperty
 };

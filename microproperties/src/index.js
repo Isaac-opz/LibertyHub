@@ -12,6 +12,7 @@ app.use(morgan('dev'));
 app.get('/properties', propertyController.getProperties);
 app.post('/properties', express.json(), propertyController.createProperty);
 app.get('/properties/:id', propertyController.getPropertyById);
+app.patch('/properties/:id', express.json(), propertyController.updatePropertyRating);
 
 const PORT = 6771;
 app.listen(PORT, () => {

@@ -28,6 +28,9 @@
             <a href="verify-user.html" class="btn-add-property">
                 <span class="icon">&#x1F3E0;</span> Agregar Nueva Propiedad
             </a>
+            <a href="review.html" class="btn-review-property"> <!-- Agrega este enlace -->
+                <span class="icon">&#x1F4DD;</span> Reseñar Propiedad <!-- Agrega este texto -->
+            </a> <!-- Cierra el enlace -->
         </section>
         <section class="property-list">
             <h1>Propiedades:</h1>
@@ -43,24 +46,28 @@
         // Función para mostrar las propiedades en la página
         async function displayProperties(properties) {
             const propertyList = document.getElementById('property-list');
-    
+
             properties.forEach((property) => {
                 const propertyCard = document.createElement('div');
                 propertyCard.className = 'property-card';
-    
+
+                const propertyId = document.createElement('p');
+                propertyId.textContent = "ID: " + property.id;
+
                 const propertyName = document.createElement('h3');
                 propertyName.textContent = property.nombre;
-    
+
                 const propertyDescription = document.createElement('p');
                 propertyDescription.textContent = "calificación: " + property.calificacion;
-    
+
+                propertyCard.appendChild(propertyId);
                 propertyCard.appendChild(propertyName);
                 propertyCard.appendChild(propertyDescription);
-    
+
                 propertyList.appendChild(propertyCard);
             });
         }
-    
+
         // Realiza la solicitud GET al servidor para obtener las propiedades
         async function getProperties() {
             try {
@@ -70,7 +77,7 @@
                         'Content-Type': 'application/json'
                     },
                 });
-    
+
                 if (response.ok) {
                     const properties = await response.json();
                     displayProperties(properties);
@@ -81,7 +88,7 @@
                 console.error('Error de red al obtener las propiedades.');
             }
         }
-    
+
         // Llama a la función para obtener y mostrar las propiedades al cargar la página
         window.addEventListener('load', getProperties);
     </script>

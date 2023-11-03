@@ -1,4 +1,6 @@
 const Property = require('../models/property');
+const axios = require('axios');
+
 
 const getProperties = async (req, res) => {
     try {
@@ -38,8 +40,27 @@ const getPropertyById = async (req, res) => {
     }
 };
 
+const updatePropertyRating = async (propertyId) => {
+    try {
+        const response = await axios.get(`http://localhost/reviews/${propertyId}`);
+        const reviews = response.data;
+        
+        const totalRating = reviews.reduce((acc, review) => acc + review.rating, 0);
+        const newRating = reviews.length > 0 ? totalRating / reviews.length : 0;
+
+        const result = await Property.updateProperty(propertyId, { calificacion: newRating.toFixed(2) });
+        if (result.affectedRows === 0) {
+            throw new Error('No se actualizó ninguna fila');
+        }
+    } catch (error) {
+        console.log('Error al actualizar la calificación de la propiedad:', error.message);
+        // para manejar el error si a
+    }
+};
+
 module.exports = {
     getProperties,
     createProperty,
-    getPropertyById
+    getPropertyById,
+    updatePropertyRating
 };

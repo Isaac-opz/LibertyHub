@@ -8,6 +8,7 @@
     --bg-dark: #121212;
     --text-dark: #e0e0e0;
     --primary-color: #ff6f00;  /* Color naranja */
+    --secondary-color: #00b8d4;  /* Nuevo color azul */
 }
 
 body {
@@ -105,11 +106,11 @@ nav ul li a:hover {
     font-size: 16px;
 }
 
-.btn-add-property {
+.btn-add-property,
+.btn-review-property {
     display: inline-block;
-    margin: 20px 0;
+    margin: 20px 10px;
     padding: 10px 30px;
-    background-color: var(--primary-color);
     color: var(--text-dark);
     text-decoration: none;
     border-radius: 50px;
@@ -120,11 +121,24 @@ nav ul li a:hover {
     vertical-align: middle;
 }
 
+.btn-add-property {
+    background-color: var(--primary-color);
+}
+
 .btn-add-property:hover {
     background-color: #ff8b33;
 }
 
-.btn-add-property .icon {
+.btn-review-property {
+    background-color: var(--secondary-color);
+}
+
+.btn-review-property:hover {
+    background-color: #00c4e7;
+}
+
+.btn-add-property .icon,
+.btn-review-property .icon {
     margin-right: 10px;
 }
 

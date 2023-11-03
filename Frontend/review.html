@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Reseña</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleresena.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <img src="data/logo.png" alt="Logo de la página" id="logo-header">
+        </a>
+        <h1>Crear Reseña</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="explore.html">Explorar Propiedades</a></li>
+                <li><a href="register.html">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="create-resena-form">
+            <h1>Crear Reseña</h1>
+            <form id="resena-form">
+                <div class="form-group">
+                    <label for="property-id">ID de la Propiedad:</label>
+                    <input type="number" id="property-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="resena-text">Texto de la Reseña:</label>
+                    <textarea id="resena-text" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="resena-rating">Calificación:</label>
+                    <select id="resena-rating" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <button type="submit">Enviar Reseña</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 LibertyHub - Plataforma de Reseñas de Airbnbs en Nueva York 🗽</p>
+    </footer>
+    <script>
+        const form = document.getElementById('resena-form');
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const propertyId = document.getElementById('property-id').value;
+            const resenaText = document.getElementById('resena-text').value;
+            const resenaRating = document.getElementById('resena-rating').value;
+
+            try {
+                const response = await fetch('http://localhost:6773/reviews', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        propertyId: idPropiedad,
+                        texto: resenaText,
+                        calificacion: resenaRating
+                    }),
+                });
+
+                if (response.ok) {
+                    alert('Reseña creada con éxito');
+                } else {
+                    alert('Error al crear la reseña');
+                }
+            } catch (error) {
+                console.error('Error de red al crear la reseña');
+            }
+        });
+    </script>
+</body>
+
+</html>
