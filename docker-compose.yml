@@ -18,17 +18,17 @@ services:
     build: ./microresena
     links:
       - db
-      - microproperties
-      - microuser
+      - propiedades:microproperties
+      - usuarios:microuser
     ports:
       - "3003:3003"
       
-  Frontend:
-    build: ./Frontend
+  frontend:
+    build: ./frontend
     links:
-      - microproperties
-      - microresena
-      - microuser
+      - propiedades:microproperties
+      - resena:microresena
+      - usuarios:microuser
     ports:
       - "1080:80"
       
@@ -40,4 +40,3 @@ services:
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - ./db:/docker-entrypoint-initdb.d/:ro
-
