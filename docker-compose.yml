@@ -1,0 +1,42 @@
+version: "2"
+services:
+  usuarios:
+    build: ./usuarios
+    links:
+      - db
+    ports:
+      - "3001:3001"
+      
+  productos:
+    build: ./productos
+    links:
+      - db
+    ports:
+      - "3002:3002"
+      
+  ordenes:
+    build: ./ordenes
+    links:
+      - db
+      - usuarios
+      - productos
+    ports:
+      - "3003:3003"
+      
+  microweb:
+    build: ./microweb
+    links:
+      - usuarios
+      - productos
+      - ordenes
+    ports:
+      - "1080:80"
+      
+  db:
+    image: mysql:5.7
+    ports:
+      - "32000:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/:ro
