@@ -1,34 +1,34 @@
 version: "2"
 services:
   usuarios:
-    build: ./usuarios
+    build: ./microuser
     links:
       - db
     ports:
       - "3001:3001"
       
-  productos:
-    build: ./productos
+  propiedades:
+    build: ./microproperties
     links:
       - db
     ports:
       - "3002:3002"
       
-  ordenes:
-    build: ./ordenes
+  resena:
+    build: ./microresena
     links:
       - db
-      - usuarios
-      - productos
+      - microproperties
+      - microuser
     ports:
       - "3003:3003"
       
-  microweb:
-    build: ./microweb
+  Frontend:
+    build: ./Frontend
     links:
-      - usuarios
-      - productos
-      - ordenes
+      - microproperties
+      - microresena
+      - microuser
     ports:
       - "1080:80"
       
@@ -40,3 +40,4 @@ services:
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - ./db:/docker-entrypoint-initdb.d/:ro
+
