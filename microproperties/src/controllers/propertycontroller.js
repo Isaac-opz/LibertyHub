@@ -40,9 +40,11 @@ const getPropertyById = async (req, res) => {
     }
 };
 
-const updatePropertyRating = async (propertyId) => {
+const updatePropertyRating = async (req, res, next) => {
+    const propertyId = req?.params.id || req;
+
     try {
-        const response = await axios.get(`http://localhost/reviews/${propertyId}`);
+        const response = await axios.get(`http://localhost:6773/reviews/${propertyId}`);
         const reviews = response.data;
         
         const totalRating = reviews.reduce((acc, review) => acc + review.rating, 0);
@@ -52,11 +54,18 @@ const updatePropertyRating = async (propertyId) => {
         if (result.affectedRows === 0) {
             throw new Error('No se actualizó ninguna fila');
         }
+
+        if(res) {
+            res.json({ message: 'Calificación actualizada correctamente' });
+        }
     } catch (error) {
         console.log('Error al actualizar la calificación de la propiedad:', error.message);
-        // para manejar el error si a
+        if(res) {
+            res.status(500).json({ message: 'Error al actualizar la calificación de la propiedad' });
+        }
     }
 };
+
 
 module.exports = {
     getProperties,
