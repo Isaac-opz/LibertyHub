@@ -1,37 +1,37 @@
 version: "2"
 services:
-  usuarios:
-    build: ./microuser
-    links:
-      - db
+  haproxy:
+    image: haproxy:latest
+    volumes:
+      - ./LibertyHub/haproxy:/usr/local/etc/haproxy:ro
     ports:
-      - "3001:3001"
-      
-  propiedades:
-    build: ./microproperties
-    links:
-      - db
-    ports:
-      - "3002:3002"
-      
-  resena:
-    build: ./microresena
-    links:
-      - db
-      - propiedades:microproperties
-      - usuarios:microuser
-    ports:
-      - "3003:3003"
-      
+      - "80:80"
+    depends_on:
+      - frontend
+      - resena
+
   frontend:
     build: ./frontend
-    links:
-      - propiedades:microproperties
-      - resena:microresena
-      - usuarios:microuser
+    # No exponemos puertos aquí ya que HAProxy manejará el tráfico entrante al frontend.
+
+  resena:
+    build: ./microresena
+    # No exponemos puertos aquí ya que HAProxy manejará el tráfico entrante a resena.
+
+  usuarios:
+    build: ./microuser
     ports:
-      - "1080:80"
-      
+      - "3001:3001"
+    links:
+      - db
+
+  propiedades:
+    build: ./microproperties
+    ports:
+      - "3002:3002"
+    links:
+      - db
+
   db:
     image: mysql:5.7
     ports:
