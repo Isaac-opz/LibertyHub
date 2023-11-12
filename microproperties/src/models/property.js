@@ -1,5 +1,4 @@
 const mysql = require('mysql2/promise');
-const reviewModel = require('../../../microresena/src/models/reviewModel');
 const connection = mysql.createPool({
     host: 'localhost',
     user: 'root',
