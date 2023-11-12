@@ -57,7 +57,7 @@ Instrucciones detalladas sobre cómo instalar y configurar el proyecto en un ent
     git clone https://github.com/Isaac-opz/LibertyHub.git    
     ```
 
-- Ejecutar microservicios (dentro de la carpeta de cada microservicio):
+- Ejecutar microservicios (ruta raíz):
     ```bash
-    node src/index.js
+    npm run start-all
     ```
