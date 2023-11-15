@@ -16,5 +16,5 @@ app.patch('/properties/:id', express.json(), propertyController.updatePropertyRa
 
 const PORT = 6771;
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+    console.log('microservicio de propiedades ejecutándose en el puerto ' + PORT);
 });

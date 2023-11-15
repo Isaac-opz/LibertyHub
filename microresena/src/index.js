@@ -14,5 +14,5 @@ app.get('/reviews/:propertyId', reviewController.getReviewsByPropertyId);
 
 const PORT = 6773;
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+    console.log('microservicio de resenas ejecutándose en el puerto ' + PORT);
 });
